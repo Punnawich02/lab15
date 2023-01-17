@@ -1,9 +1,33 @@
 #include <iostream>
 using namespace std;
 
+template <typename S>
+void show(S d[] ,int N)
+{
+	for(int i = 0;i < N;i++)
+	{
+		cout << d[i] << " ";
+	}
+	cout << "\n";
+}
+
 template <typename T>
 void insertionSort(T d[],int N){
-
+	for(int i = 1 ;i < N;i++)
+	{
+		T temp = d[i];
+		for(int j = i-1;j >= 0 ;j--)
+		{
+			if(d[j] < temp)
+			{
+				d[j+1] = d[j];
+				d[j] = temp;
+			}
+			
+		}
+		cout << "Pass " << i << ":";
+		show(d,N);
+	}
 }
 
 int main(){
